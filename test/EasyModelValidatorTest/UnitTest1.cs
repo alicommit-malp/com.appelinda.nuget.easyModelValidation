@@ -1,18 +1,60 @@
+using System.ComponentModel.DataAnnotations;
+using EasyModelValidator;
 using NUnit.Framework;
 
-namespace Tests
+namespace EasyModelValidatorTest
 {
+    [TestFixture]
     public class Tests
     {
-        [SetUp]
-        public void Setup()
+        class MyClass
         {
+            [Required, RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                                         @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                                         @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$",
+                 ErrorMessage = "Email Format Error")]
+            public string Email { get; set; }
+
+            [Required] public string Name { get; set; }
         }
 
         [Test]
         public void Test1()
         {
-            Assert.Pass();
+            var myInstance = new MyClass()
+            {
+                Email = "ali.asdasd",
+                Name = "Ali"
+            };
+
+            var validationResult = myInstance.IsValid();
+            if (!validationResult) Assert.Pass();
+        }
+
+
+        [Test]
+        public void Test2()
+        {
+            var myInstance = new MyClass()
+            {
+                Email = "alialp3.141@gmail.com"
+            };
+
+            var validationResult = myInstance.IsValid();
+            Assert.IsFalse(validationResult);
+        }
+
+        [Test]
+        public void Test3()
+        {
+            var myInstance = new MyClass()
+            {
+                Email = "alialp3.141@gmail.com",
+                Name = "Ali"
+            };
+
+            var validationResult = myInstance.IsValid();
+            Assert.IsTrue(validationResult);
         }
     }
 }

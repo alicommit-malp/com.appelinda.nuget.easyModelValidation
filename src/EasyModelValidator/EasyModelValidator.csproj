@@ -2,6 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Title>Easy model validator for custom models and POCO objects</Title>
+    <Description>Easy model validator for custom models and POCO objects outside of the MVC validation context </Description>
+    <Copyright>2019 Ali Alp</Copyright>
+    <PackageProjectUrl>https://github.com/alicommit-malp/com.appelinda.nuget.easyModelValidation</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/alicommit-malp/com.appelinda.nuget.easyModelValidation/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/alicommit-malp/com.appelinda.nuget.easyModelValidation</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageTags>Model, Validator </PackageTags>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.6.0" />
+  </ItemGroup>
 
 </Project>
