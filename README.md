@@ -1,10 +1,6 @@
 # Easy Model Validator in C-Sharp
 
-This article will explain a cool way of validating a model or any object by using 
-the Validation attributes 
-To validate a Model in MVC you make use of 
-[Model Validation Attributes](https://docs.microsoft.com/en-us/aspnet/core/mvc/models/validation?view=aspnetcore-3.0)
-like this
+This article will explain a cool way of validating a model or any object by using the Validation attributes To validate a Model in MVC you make use of [Model Validation Attributes](https://docs.microsoft.com/en-us/aspnet/core/mvc/models/validation?view=aspnetcore-3.0) like this
 
 ```c#
 class ContactModel
@@ -40,10 +36,7 @@ public class ContactController : Controller
     }
 ```
 
-but what if you want to use the ContactModel class in your own logic and not 
-in the MVC Controller but still you may need to validate the model before usage 
-or maybe you have a normal POCO class and you want to validate that in clean
-way in a scenario like this 
+but what if you want to use the ContactModel class in your own logic and not in the MVC Controller but still you may need to validate the model before usage or maybe you have a normal POCO class and you want to validate that in clean way in a scenario like this 
 
 
 ```c#
@@ -61,8 +54,7 @@ public class ContactHelper
     }
 ```
 
-this was the motivation to create the EasyModelValidatorExtension which can help
-you validate any object by simply adding the validation attributes in that object
+this was the motivation to create the EasyModelValidatorExtension which can help you validate any object by simply adding the validation attributes in that object
 
 ```c#
  public static class EasyModelValidatorExtension
