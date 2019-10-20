@@ -7,7 +7,7 @@ namespace EasyModelValidatorTest
     [TestFixture]
     public class Tests
     {
-        class MyClass
+        class Contact
         {
             [Required, RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
                                          @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
@@ -21,7 +21,7 @@ namespace EasyModelValidatorTest
         [Test]
         public void Test1()
         {
-            var myInstance = new MyClass()
+            var myInstance = new Contact()
             {
                 Email = "ali.asdasd",
                 Name = "Ali"
@@ -35,7 +35,7 @@ namespace EasyModelValidatorTest
         [Test]
         public void Test2()
         {
-            var myInstance = new MyClass()
+            var myInstance = new Contact()
             {
                 Email = "alialp3.141@gmail.com"
             };
@@ -47,7 +47,7 @@ namespace EasyModelValidatorTest
         [Test]
         public void Test3()
         {
-            var myInstance = new MyClass()
+            var myInstance = new Contact()
             {
                 Email = "alialp3.141@gmail.com",
                 Name = "Ali"
